@@ -70,30 +70,24 @@ def organize_size():
             parent_folder = os.path.join(input_file_path, "Organized")
             if not os.path.exists(parent_folder):
                 os.mkdir(parent_folder)
-
             if 0 <= size < 1000:
                 folder = os.path.join(parent_folder, "Bytes")
                 _folder(file_path, parent_folder, folder, each_file)
-
             elif 1000 < size < 1000000:
                 folder = os.path.join(parent_folder, "KB")
                 _folder(file_path, parent_folder, folder, each_file)
-
             elif 1000000 < size < 100000000:
                 folder = os.path.join(parent_folder, "100 MB")
                 _folder(file_path, parent_folder, folder, each_file)
-
             elif 100000000 < size < 500000000:
                 folder = os.path.join(parent_folder, "500 MB")
                 _folder(file_path, parent_folder, folder, each_file)
-
             elif size > 1000000000:
                 folder = os.path.join(parent_folder, "GB")
                 _folder(file_path, parent_folder, folder, each_file)
 
 
 if __name__ == '__main__':
-    # Taking the input from Command line using Command line parsing.
     if len(sys.argv) == 1:
         organize_ext()
     elif len(sys.argv) == 2:
