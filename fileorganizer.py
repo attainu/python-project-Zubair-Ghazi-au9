@@ -3,33 +3,33 @@ import shutil
 
 DIRECTORIES = {
     "HTML": [".html5", ".html", ".htm", ".xhtml"],
-    "IMAGES": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg",
+    "Images": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg",
                ".heif", ".psd", ".jfif"
                ],
-    "FILE": ["File"],
-    "VIDEOS": [".avi", ".flv", ".wmv", ".mov", ".mp4", ".webm", ".vob", ".mng",
+    "File": ["File"],
+    "Videos": [".avi", ".flv", ".wmv", ".mov", ".mp4", ".webm", ".vob", ".mng",
                ".qt", ".mpg", ".mpeg", ".3gp"
                ],
-    "DOCUMENTS": [".oxps", ".epub", ".pages", ".docx", ".doc", ".fdf", ".ods",
+    "Documents": [".oxps", ".epub", ".pages", ".docx", ".doc", ".fdf", ".ods",
                   ".odt", ".pwi", ".xsn", ".xps", ".dotx", ".docm", ".dox",
                   ".rvg", ".rtf", ".rtfd", ".wpd", ".xls", ".xlsx", ".ppt",
                   "pptx"
                   ],
-    "ARCHIVES": [".a", ".ar", ".cpio", ".iso", ".tar", ".gz", ".rz", ".7z",
+    "Archives": [".a", ".ar", ".cpio", ".iso", ".tar", ".gz", ".rz", ".7z",
                  ".dmg", ".rar", ".xar", ".zip"
                  ],
-    "AUDIO": [".aac", ".aa", ".aac", ".dvf", ".m4a", ".m4b", ".m4p", ".mp3",
+    "Audio": [".aac", ".aa", ".aac", ".dvf", ".m4a", ".m4b", ".m4p", ".mp3",
               ".msv", "ogg", "oga", ".raw", ".vox", ".wav", ".wma"
               ],
-    "PLAINTEXT": [".txt", ".in", ".out"],
-    "PDF": [".pdf"],
-    "PYTHON": [".py"],
+    "Plaintext": [".txt", ".in", ".out"],
+    "Pdf": [".pdf"],
+    "Python": [".py"],
     "XML": [".xml"],
-    "EXE": [".exe"],
-    "SHELL": [".sh"],
-    "JS": ["javaScript File"],
-    "torrent": ["TORRENT File"],
-    "JSON": ["JSON File"]
+    "Exe": [".exe"],
+    "Shell": [".sh"],
+    "JS": [".js"],
+    "Torrent": [".torrent"],
+    "Json": [".json"]
 }
 FILE_FORMATS = {file_format: directory
                 for directory, file_formats in DIRECTORIES.items()
@@ -41,7 +41,7 @@ def organize_by_ext():
     for each_file in os.scandir():
         if not each_file.is_dir():
             file_path = os.path.abspath(each_file)
-            file_extension = os.path.abspath(file_path)[1].lower()
+            file_extension = os.path.splitext(file_path)[1].lower()
             if file_extension in FILE_FORMATS:
                 parent_folder = os.path.join(input_file_path, "Organized")
                 if not os.path.exists(parent_folder):
