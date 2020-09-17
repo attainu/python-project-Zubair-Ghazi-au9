@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 DIRECTORIES = {
     "HTML": [".html5", ".html", ".htm", ".xhtml"],
@@ -91,5 +92,13 @@ def organize_size():
                 _folder(file_path, parent_folder, folder, each_file)
 
 
-if __name__ == "__main__":
-    organize_size()
+if __name__ == '__main__':
+    # Taking the input from Command line using Command line parsing.
+    if len(sys.argv) == 1:
+        organize_ext()
+    elif len(sys.argv) == 2:
+        Organize = sys.argv[1]
+        if Organize == "ext":
+            organize_ext()
+        elif Organize == "size":
+            organize_size()
