@@ -15,7 +15,7 @@ DIRECTORIES = {
     "Documents": [".oxps", ".epub", ".pages", ".docx", ".doc", ".fdf", ".ods",
                   ".odt", ".pwi", ".xsn", ".xps", ".dotx", ".docm", ".dox",
                   ".rvg", ".rtf", ".rtfd", ".wpd", ".xls", ".xlsx", ".ppt",
-                  "pptx", ".md"
+                  "pptx", ".md", ".csv"
                   ],
     "Archives": [".a", ".ar", ".cpio", ".iso", ".tar", ".gz", ".rz", ".7z",
                  ".dmg", ".rar", ".xar", ".zip"
