@@ -99,8 +99,8 @@ def organize_alphabet():
             if not os.path.exists(parent_folder):
                 os.mkdir(parent_folder)
             _, tail = ntpath.split(file_path)
-            alp = tail[0].upper()
-            folder = os.path.join(parent_folder, alp)
+            alpha = tail[0].upper()
+            folder = os.path.join(parent_folder, alpha)
             crt_dir(file_path, folder, each_file)
 
 
@@ -115,3 +115,5 @@ if __name__ == '__main__':
             organize_size()
         elif Organize == "alpha":
             organize_alphabet()
+        else:
+            print("Give input from these three options ext, size or alpha")
